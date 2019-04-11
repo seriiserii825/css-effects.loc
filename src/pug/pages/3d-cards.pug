@@ -1,0 +1,36 @@
+extends template
+
+block title
+	title Главная
+
+block content
+	.hidden
+		//- include ../../../build/assets/i/svg/inline/sprite.svg
+
+	.container
+		include ../includes/header
+
+		.cards
+			.card
+				.card__front
+					span.card__text Front
+				.card__back
+					span.card__text Back
+
+			.card
+				.card__front
+					span.card__text Front
+				.card__back
+					span.card__text Back
+
+			.card
+				.card__front
+					span.card__text Front
+				.card__back
+					span.card__text Back
+
+
+	include ../includes/scripts/ie-scripts
+	include ../includes/scripts/scripts.pug
+	//- script(src="assets/js/main.min.js")
+

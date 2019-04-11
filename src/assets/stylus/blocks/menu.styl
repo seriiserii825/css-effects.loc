@@ -1,15 +1,36 @@
-.menu
+.main-menu
 	display flex
-	align-items center
+	&.main-menu--sub
+		display none
+	&.main-menu--deep
+		position absolute
+		top 0
+		left 100%
+		display none
 
-.menu__link
+.main-menu__item
+	position relative
+	width 150px
+	flex-grow 0
+	flex-shrink 0
+	// flex-grow 1
+	border-right 1px solid #aaa
+	&:hover > .main-menu--sub
+		display block
+	&.main-menu__item--sub
+		position relative
+		&:hover > .main-menu--deep
+			display block
+	&.main-menu__item--deep
+		z-index 2
+
+.main-menu__link
 	display block
-	padding: 15px 25px
-	text-decoration none
+	padding 15px 25px
+	font-size 14px
 	text-transform uppercase
-	color: #aaa
-	border: 1px solid yellow
-
+	text-align center
+	background linear-gradient(#aaa, #ddd, #aaa)
 	&:hover
-		color yellow
-		background #aaa
+		color #ddd
+		background #444

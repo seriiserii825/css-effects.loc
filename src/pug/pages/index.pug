@@ -1,22 +1,17 @@
 extends template
 
-block css
-
 block title
 	title Главная
 
 block content
+	.hidden
+		//- include ../../../build/assets/i/svg/inline/sprite.svg
+
 	.container
-		include ../includes/menu
+		include ../includes/header
 
-
-
-	//footer
-	|
-	|
-block comment-scripts
-block scripts
-	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-	script(src="assets/libs/jquery-easy-scroll/jquery.easeScroll.js")
+	include ../includes/scripts/ie-scripts
+	include ../includes/scripts/scripts.pug
+	script(src="assets/libs/slick/slick/slick.min.js")
 	script(src="assets/js/main.min.js")
 
