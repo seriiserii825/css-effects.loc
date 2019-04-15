@@ -1,0 +1,20 @@
+extends template
+
+block title
+	title Стрелка гамбургер
+
+block content
+	.hidden
+		//- include ../../../build/assets/i/svg/inline/sprite.svg
+
+	.container
+		include ../includes/header
+
+		section.btn-arrow__section
+			a(href="#").btn-arrow
+				span.btn-arrow__span
+
+	include ../includes/scripts/ie-scripts
+	include ../includes/scripts/scripts.pug
+	script(src="assets/js/main.js")
+

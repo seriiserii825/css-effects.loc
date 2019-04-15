@@ -1,0 +1,52 @@
+.btn-arrow__section
+	display flex
+	justify-content center
+	align-items center
+	height 100vh
+	background #8E24AA
+
+.btn-arrow
+	position relative
+	display block
+	width 90px
+	height 90px
+	background #fff
+	border-radius 50%
+
+	&.btn-arrow--active .btn-arrow__span::before,
+	&.btn-arrow--active .btn-arrow__span::after
+		width 30px
+		transform-origin left bottom
+
+	&.btn-arrow--active .btn-arrow__span::before
+		transform rotate(20deg)
+
+	&.btn-arrow--active .btn-arrow__span::after
+		transform rotate(-20deg)
+
+.btn-arrow__span
+	position absolute
+	top 50%
+	left 50%
+	margin-top -2px
+	margin-left -30px
+	display block
+	width 60px
+	height 4px
+	background #444
+
+	&::before,
+	&::after
+		content ''
+		position absolute
+		display block
+		width 60px
+		height 4px
+		background #444
+		transition all .4s ease
+
+	&::before
+		transform translateY(10px)
+
+	&::after
+		transform translateY(-10px)
