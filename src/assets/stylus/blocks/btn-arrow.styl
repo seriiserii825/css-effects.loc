@@ -1,9 +1,36 @@
-.btn-arrow__section
+.btn-arrow__wrap
 	display flex
 	justify-content center
 	align-items center
 	height 100vh
 	background #8E24AA
+
+.btn-arrow__menu-block
+	display flex
+	justify-content center
+	align-items center
+	border-top-right-radius 50px
+	border-bottom-right-radius 50px
+	overflow hidden
+
+.btn-arrow__menu-nav
+	display flex
+	justify-content center
+	align-items center
+	margin-right -40px
+	padding-right 40px
+	height 90px
+	background #fff
+	border-top-left-radius 50px
+	border-bottom-left-radius 50px
+	transform translateX(92%)
+	transition all .4s
+	&.btn-arrow__menu-nav--active
+		transform translateX(0)
+
+.btn-arrow__menu-nav__link
+	display block
+	padding 0 40px
 
 .btn-arrow
 	position relative

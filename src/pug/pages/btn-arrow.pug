@@ -10,9 +10,20 @@ block content
 	.container
 		include ../includes/header
 
-		section.btn-arrow__section
-			a(href="#").btn-arrow
-				span.btn-arrow__span
+		.btn-arrow__wrap
+			.btn-arrow__menu-block
+				ul.btn-arrow__menu-nav
+					li.btn-arrow__menu-nav__item
+						a(href="#").btn-arrow__menu-nav__link Home
+					li.btn-arrow__menu-nav__item
+						a(href="#").btn-arrow__menu-nav__link About
+					li.btn-arrow__menu-nav__item
+						a(href="#").btn-arrow__menu-nav__link Blog
+					li.btn-arrow__menu-nav__item
+						a(href="#").btn-arrow__menu-nav__link Contacts
+
+				a(href="#").btn-arrow
+					span.btn-arrow__span
 
 	include ../includes/scripts/ie-scripts
 	include ../includes/scripts/scripts.pug

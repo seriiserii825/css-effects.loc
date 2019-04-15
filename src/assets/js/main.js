@@ -25,10 +25,9 @@ $(function () {
 			e.preventDefault();
 
 			$(this).toggleClass('btn-arrow--active');
-			console.log($(this));
+
+			$('.btn-arrow__menu-nav').toggleClass('btn-arrow__menu-nav--active');
 		});
 	}
-
-
-
 });
+
