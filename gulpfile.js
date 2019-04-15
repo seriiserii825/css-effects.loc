@@ -96,14 +96,18 @@ gulp.task('pug', function () {
 	// .pipe(notify("Change html"));
 });
 
+gulp.task('stylint', function () {
+	return gulp.src('src/assets/stylus/**/*.styl')
+		.pipe(plumber())
+		.pipe(stylint({ config: '.stylintrc' }))
+		.pipe(stylint.reporter());
+});
+
 gulp.task("css", function () {
 	return gulp.src('src/assets/stylus/style.styl')
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		// .pipe(wait(500))
-		.pipe(stylint({ config: '.stylintrc' }))
-		.pipe(debug({ title: "stylus" }))
-		.pipe(stylint.reporter())
 		.pipe(stylus())
 		.pipe(autoprefixer({
 			cascade: false
@@ -218,6 +222,7 @@ gulp.task("clean", function (cb) {
 gulp.task("watch", function () {
 	gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
 	gulp.watch('src/assets/stylus/**/*.styl', gulp.series('css'));
+	gulp.watch('src/assets/stylus/**/*.styl', gulp.series('stylint'));
 	gulp.watch('src/assets/js/main.js', gulp.series('js'));
 	gulp.watch('src/assets/js/**/*.js', gulp.series('alljs'));
 	gulp.watch(['src/assets/i/*.*'], gulp.series("image"));
@@ -248,6 +253,7 @@ gulp.task('default', gulp.series(
 		'alljs',
 		// 'webp',
 		// 'svg-bg',
+		'stylint',
 		'fonts',
 		'image',
 		'libs',

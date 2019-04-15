@@ -1,8 +1,8 @@
 {
   "alphabetical": false,
   "borderNone": true,
-  "brackets": true,
-  "colons": true,
+	"brackets": "never",
+  "colons": "never",
   "colors": true,
   "commaSpace": true,
   "commentSpace": false,

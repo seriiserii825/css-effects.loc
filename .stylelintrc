@@ -1,5 +1,5 @@
 {
-  "extends": "stylelint-config-recommended",
+  "extends": "stylelint-config-standard",
   "plugins": [
     "stylelint-order",
   ],
@@ -8,5 +8,26 @@
       "custom-properties",
       "declarations"
   ],
+	"block-no-empty": null,
+    "color-no-invalid-hex": true,
+    "comment-empty-line-before": [ "always", {
+      "ignore": ["stylelint-commands", "after-comment"]
+    } ],
+    "declaration-colon-space-after": "always",
+    "indentation": ["tab", {
+      "except": ["value"]
+    }],
+    "max-empty-lines": 2,
+    "rule-empty-line-before": [ "always", {
+      "except": ["first-nested"],
+      "ignore": ["after-comment"]
+    } ],
+    "unit-whitelist": ["em", "rem", "%", "s"],
+		"property-no-unknown": true,
+		"color-no-hex": false,
+		"color-hex-case": [ "upper", {
+    "message": "Lowercase letters are easier to distinguish from numbers"
+  } ],
+  }
   "order/properties-alphabetical-order": null,
   "at-rule-no-unknown": [true, { "ignoreAtRules": ["function", "if", "return", "else", "each", "include", "mixin"] }] } }
