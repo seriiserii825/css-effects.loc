@@ -1,0 +1,27 @@
+extends template
+
+block title
+	title Конверт
+
+block content
+	.hidden
+		//- include ../../../build/assets/i/svg/inline/sprite.svg
+
+	include ../includes/header
+
+	section.envelope__wrap
+		.envelope#js-envelope
+			.envelope__top.envelope__top--close
+				img(src="assets/i/envelope/envelope-top3.png", alt="")
+			.envelope__body
+				img(src="assets/i/envelope/envelope-body2.png", alt="")
+			.envelope__paper.envelope__paper--down
+				span Спасибо
+
+	audio#js-audio-close-envelope
+		source(src="assets/i/envelope/close.mp3" preload="auto")
+
+	include ../includes/scripts/ie-scripts
+	include ../includes/scripts/scripts.pug
+	script(src="assets/libs/slick/slick/slick.min.js")
+	script(src="assets/js/main.min.js")

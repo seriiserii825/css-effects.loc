@@ -29,5 +29,42 @@ $(function () {
 			$('.btn-arrow__menu-nav').toggleClass('btn-arrow__menu-nav--active');
 		});
 	}
+
+	let cardsSlider = function () {
+		$('#js-cards .cards__img-wrap').each(function (idx) {
+			let carouselId = "carousel" + idx;
+			this.closest('.cards__item').id = carouselId;
+
+			$(this).slick({
+				arrows: false,
+				dots: true,
+				appendDots: "#" + carouselId + ' .cards__color',
+				customPaging: function (slider, i) {
+					let sliderItem = $(slider.$slides[i]);
+					let sliderChildren = sliderItem.find('.cards__img');
+					let color = sliderChildren.data('color');
+
+					return '<a class="cards__color-item" style="background-color: ' + color + ';"></a>';
+				}
+			});
+
+		});
+
+	};
+
+	cardsSlider();
+
+
+	let closeEnvelope = function () {
+		let audio = $('#js-audio-close-envelope')[0];
+
+		$('#js-envelope').on('click', function () {
+			$('.envelope__top').toggleClass('envelope__top--close');
+			$('.envelope__paper').toggleClass('envelope__paper--down');
+			audio.play();
+		});
+	};
+
+	closeEnvelope();
 });
 
