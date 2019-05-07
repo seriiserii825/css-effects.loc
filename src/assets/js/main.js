@@ -66,5 +66,16 @@ $(function () {
 	};
 
 	closeEnvelope();
+
+	// let cityAudio = function () {
+	// 	let cityAudio = $('#js-city-audio')[0];
+	// 	let cityOverlay = $('.city__overlay');
+
+	// 	cityOverlay.on('mouseenter', function () {
+	// 		cityAudio.play();
+	// 	});
+	// };
+
+	// cityAudio();
 });
 
