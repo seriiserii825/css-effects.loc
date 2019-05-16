@@ -1,0 +1,44 @@
+extends template
+
+block title
+	title Полноэкранное меню
+
+block content
+	include ../includes/mixins
+	.hidden
+		include ../../../build/assets/i/svg/inline/sprite.svg
+
+	include ../includes/header
+
+	ul.fullscreen-menu
+		li.fullscreen-menu__item
+			+icon('home', 'fullscreen-menu__icon')
+			.fullscreen-menu__content
+				span.fullscreen-menu__title Главная
+				a(href="").fullscreen-menu__link Подробнее
+		li.fullscreen-menu__item
+			+icon('blog', 'fullscreen-menu__icon')
+			.fullscreen-menu__content
+				span.fullscreen-menu__title Блог
+				a(href="").fullscreen-menu__link Подробнее
+		li.fullscreen-menu__item
+			+icon('about', 'fullscreen-menu__icon')
+			.fullscreen-menu__content
+				span.fullscreen-menu__title Обо мне
+				a(href="").fullscreen-menu__link Подробнее
+		li.fullscreen-menu__item
+			+icon('portfolio', 'fullscreen-menu__icon')
+			.fullscreen-menu__content
+				span.fullscreen-menu__title Портфолио
+				a(href="").fullscreen-menu__link Подробнее
+		li.fullscreen-menu__item
+			+icon('contacts', 'fullscreen-menu__icon')
+			.fullscreen-menu__content
+				span.fullscreen-menu__title Контакты
+				a(href="").fullscreen-menu__link Подробнее
+
+	include ../includes/scripts/ie-scripts
+	include ../includes/scripts/scripts.pug
+	script(src="assets/libs/slick/slick/slick.min.js")
+	script(src="assets/js/main.min.js")
+
