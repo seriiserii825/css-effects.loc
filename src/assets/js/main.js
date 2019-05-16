@@ -52,9 +52,6 @@ $(function () {
 
 	};
 
-	cardsSlider();
-
-
 	let closeEnvelope = function () {
 		let audio = $('#js-audio-close-envelope')[0];
 
@@ -65,17 +62,20 @@ $(function () {
 		});
 	};
 
+	let fullscreenMenu = function () {
+		$('#js-fullscreen-menu .fullscreen-menu__item').on('mouseenter', function () {
+			let dataFullscreenMenu = $(this).attr('data-fullscreen-menu');
+			let fullscreenMenu = $('#js-fullscreen-menu');
+			fullscreenMenu.css({
+				'background-image': 'url(assets/i/fullscreen-menu/' + dataFullscreenMenu + ')'
+			});
+		});
+	};
+
+	cardsSlider();
 	closeEnvelope();
+	fullscreenMenu();
 
-	// let cityAudio = function () {
-	// 	let cityAudio = $('#js-city-audio')[0];
-	// 	let cityOverlay = $('.city__overlay');
 
-	// 	cityOverlay.on('mouseenter', function () {
-	// 		cityAudio.play();
-	// 	});
-	// };
-
-	// cityAudio();
 });
 

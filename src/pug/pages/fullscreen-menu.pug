@@ -10,28 +10,28 @@ block content
 
 	include ../includes/header
 
-	ul.fullscreen-menu
-		li.fullscreen-menu__item
+	ul.fullscreen-menu#js-fullscreen-menu
+		li.fullscreen-menu__item(data-fullscreen-menu="fullscreen-menu-1.jpg")
 			+icon('home', 'fullscreen-menu__icon')
 			.fullscreen-menu__content
 				span.fullscreen-menu__title Главная
 				a(href="").fullscreen-menu__link Подробнее
-		li.fullscreen-menu__item
+		li.fullscreen-menu__item(data-fullscreen-menu="fullscreen-menu-2.jpg")
 			+icon('blog', 'fullscreen-menu__icon')
 			.fullscreen-menu__content
 				span.fullscreen-menu__title Блог
 				a(href="").fullscreen-menu__link Подробнее
-		li.fullscreen-menu__item
+		li.fullscreen-menu__item(data-fullscreen-menu="fullscreen-menu-3.jpg")
 			+icon('about', 'fullscreen-menu__icon')
 			.fullscreen-menu__content
 				span.fullscreen-menu__title Обо мне
 				a(href="").fullscreen-menu__link Подробнее
-		li.fullscreen-menu__item
+		li.fullscreen-menu__item(data-fullscreen-menu="fullscreen-menu-4.jpg")
 			+icon('portfolio', 'fullscreen-menu__icon')
 			.fullscreen-menu__content
 				span.fullscreen-menu__title Портфолио
 				a(href="").fullscreen-menu__link Подробнее
-		li.fullscreen-menu__item
+		li.fullscreen-menu__item(data-fullscreen-menu="fullscreen-menu-5.jpg")
 			+icon('contacts', 'fullscreen-menu__icon')
 			.fullscreen-menu__content
 				span.fullscreen-menu__title Контакты

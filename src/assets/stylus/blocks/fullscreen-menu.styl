@@ -4,7 +4,8 @@
 	justify-content space-between
 	height 100vh
 	z-index 1
-	background url('../i/fullscreen-menu/fullscreen-menu.jpg') no-repeat center
+	background url('../i/fullscreen-menu/fullscreen-menu-1.jpg') no-repeat center
+	transition background-image .3s ease-in-out
 	&__item
 		position relative
 		flex 1
@@ -19,6 +20,8 @@
 				opacity 0.6
 			.fullscreen-menu__content
 				opacity 1
+			.fullscreen-menu__icon
+				fill gold
 		&::before
 			content ''
 			position absolute
@@ -45,8 +48,9 @@
 	&__icon
 		display block
 		margin-top 60%
-		size(30px)
+		size(60px)
 		fill white
+		transition fill .6s
 	&__link
 		display block
 		margin-top auto
