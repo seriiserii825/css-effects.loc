@@ -18,17 +18,19 @@ $(function () {
 	});
 
 	//btn arrow
-	let btnArrow = $('.btn-arrow');
+	let btnArrowFunc = function () {
+		let btnArrow = $('.btn-arrow');
 
-	if (btnArrow.length > 0) {
-		btnArrow.on('click', function (e) {
-			e.preventDefault();
+		if (btnArrow.length > 0) {
+			btnArrow.on('click', function (e) {
+				e.preventDefault();
 
-			$(this).toggleClass('btn-arrow--active');
+				$(this).toggleClass('btn-arrow--active');
 
-			$('.btn-arrow__menu-nav').toggleClass('btn-arrow__menu-nav--active');
-		});
-	}
+				$('.btn-arrow__menu-nav').toggleClass('btn-arrow__menu-nav--active');
+			});
+		}
+	};
 
 	let cardsSlider = function () {
 		$('#js-cards .cards__img-wrap').each(function (idx) {
@@ -66,6 +68,7 @@ $(function () {
 		$('#js-fullscreen-menu .fullscreen-menu__item').on('mouseenter', function () {
 			let dataFullscreenMenu = $(this).attr('data-fullscreen-menu');
 			let fullscreenMenu = $('#js-fullscreen-menu');
+
 			fullscreenMenu.css({
 				'background-image': 'url(assets/i/fullscreen-menu/' + dataFullscreenMenu + ')'
 			});
@@ -75,7 +78,5 @@ $(function () {
 	cardsSlider();
 	closeEnvelope();
 	fullscreenMenu();
-
-
+	btnArrowFunc();
 });
-
