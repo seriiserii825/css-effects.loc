@@ -22,5 +22,7 @@ block content
 		source(src="assets/i/envelope/close.mp3" preload="auto")
 
 	include ../includes/scripts/ie-scripts
-	include ../includes/scripts/scripts.pug
+
+block scripts
+	script(src="assets/libs/jquery-easy-scroll/jquery.easeScroll.js")
 	script(src="assets/js/main.min.js")

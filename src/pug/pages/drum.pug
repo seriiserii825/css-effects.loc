@@ -1,0 +1,56 @@
+extends template
+
+block title
+	title Драм
+
+block content
+	.hidden
+		include ../../../build/assets/i/svg/inline/sprite.svg
+
+	include ../includes/header
+
+	.keys(tabindex='1')#js-keys
+		.key(data-key='65')
+			kbd A
+			span.sound clap
+		.key(data-key='83')
+			kbd S
+			span.sound hihat
+		.key(data-key='68')
+			kbd D
+			span.sound kick
+		.key(data-key='70')
+			kbd F
+			span.sound openhat
+		.key(data-key='71')
+			kbd G
+			span.sound boom
+		.key(data-key='72')
+			kbd H
+			span.sound ride
+		.key(data-key='74')
+			kbd J
+			span.sound snare
+		.key(data-key='75')
+			kbd K
+			span.sound tom
+		.key(data-key='76')
+			kbd L
+			span.sound tink
+
+		audio(data-key='65', src='assets/audio/clap.wav')
+		audio(data-key='83', src='assets/audio/hihat.wav')
+		audio(data-key='68', src='assets/audio/kick.wav')
+		audio(data-key='70', src='assets/audio/openhat.wav')
+		audio(data-key='71', src='assets/audio/boom.wav')
+		audio(data-key='72', src='assets/audio/ride.wav')
+		audio(data-key='74', src='assets/audio/snare.wav')
+		audio(data-key='75', src='assets/audio/tom.wav')
+		audio(data-key='76', src='assets/audio/tink.wav')
+
+	include ../includes/scripts/ie-scripts
+
+block scripts
+	script(src="assets/libs/jquery-easy-scroll/jquery.easeScroll.js")
+	script(src="assets/js/main.min.js")
+

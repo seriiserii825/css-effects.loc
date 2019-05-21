@@ -21,15 +21,14 @@ $(function () {
 	let btnArrowFunc = function () {
 		let btnArrow = $('.btn-arrow');
 
-		if (btnArrow.length > 0) {
-			btnArrow.on('click', function (e) {
-				e.preventDefault();
+		btnArrow.on('click', function (e) {
+			e.preventDefault();
+			console.log($(this));
 
-				$(this).toggleClass('btn-arrow--active');
+			$(this).toggleClass('btn-arrow--active');
 
-				$('.btn-arrow__menu-nav').toggleClass('btn-arrow__menu-nav--active');
-			});
-		}
+			$('.btn-arrow__menu-nav').toggleClass('btn-arrow__menu-nav--active');
+		});
 	};
 
 	let cardsSlider = function () {
@@ -37,19 +36,20 @@ $(function () {
 			let carouselId = "carousel" + idx;
 			this.closest('.cards__item').id = carouselId;
 
-			$(this).slick({
-				arrows: false,
-				dots: true,
-				appendDots: "#" + carouselId + ' .cards__color',
-				customPaging: function (slider, i) {
-					let sliderItem = $(slider.$slides[i]);
-					let sliderChildren = sliderItem.find('.cards__img');
-					let color = sliderChildren.data('color');
+			if($(this).length > 0){
+				$(this).slick({
+					arrows: false,
+					dots: true,
+					appendDots: "#" + carouselId + ' .cards__color',
+					customPaging: function (slider, i) {
+						let sliderItem = $(slider.$slides[i]);
+						let sliderChildren = sliderItem.find('.cards__img');
+						let color = sliderChildren.data('color');
 
-					return '<a class="cards__color-item" style="background-color: ' + color + ';"></a>';
-				}
-			});
-
+						return '<a class="cards__color-item" style="background-color: ' + color + ';"></a>';
+					}
+				});
+			}
 		});
 
 	};
@@ -75,8 +75,27 @@ $(function () {
 		});
 	};
 
+	let keysSounds = function(){
+		$('#js-keys').on('keydown', function (e) {
+			let key = $(this).find('.key[data-key='+e.which+']');
+			let audio = $(this).find('audio[data-key='+e.which+']')[0];
+
+
+			$('#js-keys .key').removeClass('playing');
+			key.toggleClass('playing');
+
+			audio.play();
+			audio.currentTime = 0;
+		});
+
+		$('#js-keys').on('keyup', function () {
+			$('#js-keys .key').removeClass('playing');
+		});
+	};
+
 	cardsSlider();
 	closeEnvelope();
 	fullscreenMenu();
 	btnArrowFunc();
+	keysSounds();
 });
