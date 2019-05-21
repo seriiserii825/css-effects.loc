@@ -61,6 +61,7 @@ $(function () {
 			$('.envelope__top').toggleClass('envelope__top--close');
 			$('.envelope__paper').toggleClass('envelope__paper--down');
 			audio.play();
+			audio.currentTime = 0;
 		});
 	};
 

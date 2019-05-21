@@ -1,0 +1,52 @@
+.main-menu {
+	display: flex;
+}
+
+.main-menu.main-menu--sub {
+	display: none;
+}
+
+.main-menu.main-menu--deep {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	display: none;
+}
+
+.main-menu__item {
+	position: relative;
+	width: 150px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	border-right: 1px solid $silver-chalice;
+}
+
+.main-menu__item:hover > .main-menu--sub {
+	display: block;
+}
+
+.main-menu__item.main-menu__item--sub {
+	position: relative;
+}
+
+.main-menu__item.main-menu__item--sub:hover > .main-menu--deep {
+	display: block;
+}
+
+.main-menu__item.main-menu__item--deep {
+	z-index: 2;
+}
+
+.main-menu__link {
+	display: block;
+	padding: 15px 25px;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-align: center;
+	background: linear-gradient($silver-chalice, $alto, $silver-chalice);
+}
+
+.main-menu__link:hover {
+	color: $alto;
+	background: $tundora;
+}

@@ -1,0 +1,58 @@
+.envelope__wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: $mona-lisa;
+}
+
+.envelope {
+	position: relative;
+	width: 200px;
+	height: 145px;
+	background: $cabaret;
+	cursor: pointer;
+}
+
+.envelope__top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 103px;
+	transform-origin: bottom;
+	transform: translateY(-98%);
+	z-index: 1;
+	transition: all 1s;
+}
+
+.envelope__top--close {
+	transform: translateY(-100%) rotateX(180deg);
+	z-index: 5;
+}
+
+.envelope__body {
+	position: absolute;
+	bottom: 0;
+	height: 145px;
+	z-index: 3;
+}
+
+.envelope__paper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+	padding: 10px;
+	width: 80px;
+	height: 100px;
+	transform: translateY(-60px);
+	background: #fff;
+	z-index: 2;
+	transition: all 0.5s;
+}
+
+.envelope__paper--down {
+	transform: translateY(-10px);
+}

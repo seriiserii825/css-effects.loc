@@ -1,0 +1,28 @@
+extends template
+
+block title
+	title Модальные окна
+
+block content
+	.hidden
+		include ../../../build/assets/i/svg/inline/sprite.svg
+
+	include ../includes/header
+
+	.modals
+		.container
+			.btn(data-popup="true") Хочу ябоко
+			.btn(data-popup="true") Хочу абрикос
+
+		.overlay
+		.popup.text-center
+		.close-btn &times;
+
+
+
+	include ../includes/scripts/ie-scripts
+
+block scripts
+	script(src="assets/libs/jquery-easy-scroll/jquery.easeScroll.js")
+	script(src="assets/js/main.min.js")
+
