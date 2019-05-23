@@ -65,14 +65,27 @@ $(function () {
 		});
 	};
 
-	let fullscreenMenu = function () {
+	let fullscreenMenuAction = function () {
+		let fullscreenMenu = $('#js-fullscreen-menu');
+		fullscreenMenu.addClass('show');
+
 		$('#js-fullscreen-menu .fullscreen-menu__item').on('mouseenter', function () {
 			let dataFullscreenMenu = $(this).attr('data-fullscreen-menu');
-			let fullscreenMenu = $('#js-fullscreen-menu');
 
-			fullscreenMenu.css({
-				'background-image': 'url(assets/i/fullscreen-menu/' + dataFullscreenMenu + ')'
-			});
+			if(fullscreenMenu.hasClass('show')){
+				console.log('Has class show');
+				fullscreenMenu.removeClass('show');
+				fullscreenMenu.css({
+					'background-image': 'url(assets/i/fullscreen-menu/' + dataFullscreenMenu + ')'
+				});
+
+				setTimeout(function(){
+					fullscreenMenu.addClass('show');
+				},200);
+			}else{
+				console.log('Has class show');
+			}
+
 		});
 	};
 
@@ -96,7 +109,7 @@ $(function () {
 
 	cardsSlider();
 	closeEnvelope();
-	fullscreenMenu();
+	fullscreenMenuAction();
 	btnArrowFunc();
 	keysSounds();
 });
