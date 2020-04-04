@@ -7,32 +7,24 @@ block content
 	.hidden
 		//- include ../../../build/assets/i/svg/inline/sprite.svg
 
-	.container
-		include ../includes/header
+	include ../includes/header
 
-		.cards
-			.card
-				.card__front
-					span.card__text Front
-				.card__back
-					span.card__text Back
+	.cards
+		.card
+			.card__front(style="background-image: url('assets/i/cards/girl-1.jpg')")
+			.card__back(style="background-image: url('assets/i/cards/girl-2.jpg')")
 
-			.card
-				.card__front
-					span.card__text Front
-				.card__back
-					span.card__text Back
+		.card
+			.card__front(style="background-image: url('assets/i/cards/girl-3.jpg')")
+			.card__back(style="background-image: url('assets/i/cards/girl-4.jpg')")
 
-			.card
-				.card__front
-					span.card__text Front
-				.card__back
-					span.card__text Back
+		.card
+			.card__front(style="background-image: url('assets/i/cards/girl-5.jpg')")
+			.card__back(style="background-image: url('assets/i/cards/girl-6.jpg')")
 
 
 	include ../includes/scripts/ie-scripts
 
 block scripts
-	script(src="assets/libs/slick/slick/slick.min.js")
 	script(src="assets/js/main.min.js")
 
