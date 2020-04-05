@@ -1,0 +1,118 @@
+.svg-animation-wrap {
+  background: #081823;
+}
+
+.svg-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  height: 100vh;
+  @media screen and (max-width: 576px) {
+	display: table;
+	margin: 0 auto;
+	padding: 80px 15px;
+	height: auto;
+  }
+  
+  &__item {
+	margin-right: 10%;
+	width: 300px;
+	cursor: pointer;
+	@media screen and (max-width: 576px) {
+	  margin-right: 0;
+	  margin-bottom: 10%;
+	}
+	&:last-of-type {
+	  margin-right: 0;
+	}
+ 
+	path {
+	  stroke: #31e8ff;
+	  stroke-width: 4px;
+	  fill: transparent;
+	}
+ 
+	&.star {
+	  &:hover path {
+		animation: animate-star 2s linear forwards;
+	  }
+	  path {
+		stroke-dasharray: 1810;
+		stroke-dashoffset: 0;
+	  }
+	}
+	&.moon {
+	  &:hover path {
+		animation: animate-moon 1.5s linear forwards;
+	  }
+	  path {
+		stroke-dasharray: 1605;
+		stroke-dashoffset: 0;
+	  }
+	}
+	&.heart {
+	  &:hover path {
+		animation: animate-heart 1s linear forwards;
+	  }
+	  path {
+		stroke-dasharray: 1560;
+		stroke-dashoffset: 0;
+	  }
+	}
+  }
+}
+@keyframes animate-star {
+  0% {
+	stroke-dashoffset: 0;
+  }
+  40% {
+	stroke-dashoffset: 1810;
+  }
+  80% {
+	stroke-dashoffset: 3620;
+	fill: transparent;
+  }
+  100% {
+	stroke-dashoffset: 3620;
+	stroke: orange;
+	fill: orange;
+  }
+}
+@keyframes animate-moon {
+  0% {
+	stroke-dashoffset: 0;
+  }
+  40% {
+	stroke-dashoffset: 1605;
+  }
+  80% {
+	stroke-dashoffset: 3210;
+	stroke: lime;
+	fill: transparent;
+  }
+  100% {
+	stroke-dashoffset: 3210;
+	stroke: lime;
+	fill: lime;
+  }
+}
+@keyframes animate-heart {
+  0% {
+	stroke-dashoffset: 0;
+  }
+  40% {
+	stroke-dashoffset: 1560;
+  }
+  80% {
+	stroke-dashoffset: 3120;
+	stroke: deeppink;
+	fill: transparent;
+  }
+  100% {
+	stroke-dashoffset: 3120;
+	stroke: deeppink;
+	fill: deeppink;
+  }
+}
+
