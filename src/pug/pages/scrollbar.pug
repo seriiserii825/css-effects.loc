@@ -1,0 +1,16 @@
+extends template
+
+block title
+    title Svg
+
+block content
+    include ../includes/header
+
+    .container
+        .big-menu
+            a(href="svg-animation.html").big-menu__item(style="background-image: url('assets/i/star.jpg')")
+                h3.big-menu__title Svg animation
+
+    include ../includes/scripts/ie-scripts
+    include ../includes/scripts/scripts.pug
+    script(src="assets/js/main.min.js")
