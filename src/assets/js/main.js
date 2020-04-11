@@ -102,9 +102,11 @@ $(function () {
 
 	let progress = document.getElementById('scrollbar-hue__progressbar');
 	let totalHeight = document.body.scrollHeight - window.innerHeight;
-	window.onscroll = function(){
-		let progressHeight = (window.pageYOffset / totalHeight) * 100;
-		progress.style.height = progressHeight + '%';
+	if(progress) {
+		window.onscroll = function(){
+			let progressHeight = (window.pageYOffset / totalHeight) * 100;
+			progress.style.height = progressHeight + '%';
+		}
 	}
 
 	cardsSlider();
@@ -112,4 +114,36 @@ $(function () {
 	fullscreenMenuAction();
 	btnArrowFunc();
 	keysSounds();
+
+	let slider = function () {
+		$('.slider').slick({
+			dots: true,
+			// adaptiveHeight: true,
+			slidesToShow: 1,
+			speed: 500,
+			easing: "ease",
+			// infinite: false,
+			// initialSlide: 2,
+			// autoplay: true,
+			autoplaySpeed: 500,
+			pauseOnFocus: false,
+			pauseOnHover: false,
+			pauseOnDotsHover: false,
+			draggable: true,
+			swipe: true,
+			touchThreshold: 10,
+			waitForAnimate: true,
+			// centerMode: true,
+			// variableWidth: true,
+			// rows: 3,
+			// slidesPerRow: 2
+			// vertical: true,
+			// verticalSwiping: true
+		});
+		// $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		// 	console.log(nextSlide);
+		// });
+		$('.slider').slick('goTo', 3);
+	};
+	slider();
 });

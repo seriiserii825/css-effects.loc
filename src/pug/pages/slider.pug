@@ -1,0 +1,46 @@
+extends template
+
+block title
+    title slider
+
+block content
+    include ../includes/header
+
+    .container
+        .slider__wrap
+            .slider
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-1.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-3.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-4.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-5.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-6.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-1.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-3.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-4.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-5.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-6.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-1.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-3.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-4.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-5.jpg" alt="")
+                .slider__item
+                    img(data-lazy="assets/i/slider/slider-6.jpg" alt="")
+
+    include ../includes/scripts/ie-scripts
+    include ../includes/scripts/scripts.pug
+    script(src="assets/libs/slick/slick/slick.min.js")
+    script(src="assets/js/main.min.js")
